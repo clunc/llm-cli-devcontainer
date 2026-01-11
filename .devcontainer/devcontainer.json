@@ -1,5 +1,5 @@
 {
-  "name": "Svelte Development",
+  "name": "LLM CLI Development",
   "build": {
     "dockerfile": "Dockerfile",
     "args": {
@@ -23,17 +23,9 @@
     "APP_ENV": "dev"
   },
   "forwardPorts": [
-    5173,
-    4173,
     1455
   ],
   "portsAttributes": {
-    "5173": {
-      "label": "Vite dev server"
-    },
-    "4173": {
-      "label": "Vite preview"
-    },
     "1455": {
       "label": "Codex auth callback"
     }
@@ -44,7 +36,6 @@
         "yzhang.markdown-all-in-one",
         "davidanson.vscode-markdownlint",
         "redhat.vscode-yaml",
-        "svelte.svelte-vscode",
         "anthropic.claude-code",
         "openai.codex"
       ],
@@ -63,6 +54,5 @@
     "ghcr.io/devcontainers/features/git:1": {},
     "ghcr.io/devcontainers/features/github-cli:1": {}
   },
-  "postCreateCommand": "bash -lc \"mkdir -p ~/.claude && claude --version && mkdir -p ~/.codex && codex --version && npm install\"",
-  "postAttachCommand": "APP_ENV=dev npm run dev:host"
+  "postCreateCommand": "bash -lc \"mkdir -p ~/.claude && claude --version && mkdir -p ~/.codex && codex --version\""
 }

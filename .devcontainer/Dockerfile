@@ -15,7 +15,7 @@ RUN apt-get update && apt-get install -y \
     openssh-client \
     && rm -rf /var/lib/apt/lists/*
 
-# Install Node.js 20 (NodeSource) for Svelte/SvelteKit development
+# Install Node.js 20 (NodeSource) for CLI/node development
 RUN curl -fsSL https://deb.nodesource.com/setup_20.x | bash - \
     && apt-get update \
     && apt-get install -y nodejs \
@@ -24,7 +24,7 @@ RUN curl -fsSL https://deb.nodesource.com/setup_20.x | bash - \
 # Install Claude and Codex CLIs globally
 RUN npm install -g @anthropic-ai/claude-code @openai/codex
 
-# Install common Svelte/SvelteKit tools globally
+# Install common tooling globally
 RUN npm install -g pnpm
 
 # Build arguments for user/group configuration
